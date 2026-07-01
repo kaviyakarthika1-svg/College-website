@@ -1,0 +1,372 @@
+/* ==========================================================
+   1. GLOBAL SYSTEM ARCHITECTURE & VARIABLES
+   ========================================================== */
+:root {
+  --sapphire-blue: #022B3A;    /* Primary Brand Base Theme */
+  --teal-green: #1F7A8C;       /* Secondary Accent Color */
+  --teal-hover: #155764;       /* Responsive Link Action Layer */
+  --gold-premium: #E1CE7A;     /* Institutional Callouts / Highlights */
+  --slate-dark: #0f172a;       /* Body Typography Primary */
+  --slate-muted: #475569;      /* Descriptions & Captions */
+  --canvas-light: #f8fafc;     /* Dynamic Alternate Block Strips */
+  --white: #ffffff;
+  --border-tint: #cbd5e1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--slate-dark);
+  line-height: 1.65;
+  width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal structural scrolling */
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.container-narrow { max-width: 750px; }
+.section { padding: 5rem 0; }
+.bg-light { background-color: var(--canvas-light); }
+.text-center { text-align: center; }
+
+/* Grid Mechanics */
+.grid { 
+  display: grid; 
+  gap: 2.5rem; 
+}
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.align-items-center { align-items: center; }
+
+.section-title { font-size: 2.5rem; font-weight: 800; color: var(--sapphire-blue); margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+.section-subtitle { font-size: 1.15rem; color: var(--slate-muted); margin-bottom: 3.5rem; }
+
+
+/* ==========================================================
+   2. HEADER, TOP-BAR, & UNIFIED FLUID NAVIGATION ROW
+   ========================================================== */
+.top-bar {
+  background-color: var(--sapphire-blue);
+  color: var(--white);
+  padding: 0.75rem 0;
+  font-size: 0.85rem;
+  border-bottom: 2px solid var(--teal-green);
+  width: 100%;
+}
+.top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+.info-items { display: flex; align-items: center; gap: 1.5rem; }
+.info-items i { color: var(--gold-premium); }
+.system-status { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: #4ade80; }
+.pulse-dot { width: 8px; height: 8px; background-color: #4ade80; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #4ade80; }
+
+.top-utilities { display: flex; align-items: center; gap: 1.5rem; }
+.utility-link { color: #cbd5e1; text-decoration: none; font-weight: 600; transition: color 0.2s; }
+.utility-link:hover { color: var(--gold-premium); }
+.badge-premium { background: rgba(225,206,122,0.15); border: 1px solid var(--gold-premium); color: var(--gold-premium); padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 700; }
+
+.navbar {
+  background-color: var(--white);
+  position: sticky;
+  top: 0; 
+  z-index: 999;
+  box-shadow: 0 4px 25px rgba(2,43,58,0.05);
+  width: 100%;
+}
+
+.nav-container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  height: 95px; 
+  width: 100%;
+}
+
+.logo { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.75rem; 
+  text-decoration: none; 
+  flex-shrink: 0;
+}
+.logo-icon { font-size: 2rem; color: var(--teal-green); }
+.logo-text { font-size: 1.5rem; font-weight: 900; color: var(--sapphire-blue); letter-spacing: -0.03em; line-height: 1.1; }
+.logo-text span { color: var(--teal-green); font-size: 0.95rem; font-weight: 500; display: block; letter-spacing: 0.08em; }
+
+/* Fixed structural layout grouping controls dynamically without squishing content */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* FLUID SEARCH: Scaled optimally to maintain link position visibility */
+.header-search-box {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  padding: 0.45rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 180px;
+  flex-shrink: 0; 
+}
+.header-search-box input { border: none; background: none; outline: none; font-size: 0.88rem; width: 100%; color: var(--slate-dark); }
+
+/* Unified non-breaking flex row anchor for links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.nav-links a { 
+  text-decoration: none; 
+  color: var(--sapphire-blue); 
+  font-weight: 700; 
+  font-size: 0.95rem; 
+  transition: color 0.2s; 
+  white-space: nowrap; 
+}
+.nav-links a:hover, .nav-links a.active { color: var(--teal-green); }
+
+/* FIXED EMBED BUTTON CONFIGURATION */
+.nav-links a.btn-nav { 
+  background-color: var(--teal-green); 
+  color: var(--white) !important; 
+  padding: 0.6rem 1.4rem; 
+  border-radius: 6px; 
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(31, 122, 140, 0.2);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.nav-links a.btn-nav:hover { 
+  background-color: var(--teal-hover);
+  transform: translateY(-1px);
+}
+
+.menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.menu-toggle span { width: 24px; height: 3px; background-color: var(--sapphire-blue); border-radius: 2px; }
+
+/* Announcement Strip Ticker */
+.announcement-strip { background-color: #f1f5f9; border-bottom: 1px solid #e2e8f0; padding: 0.65rem 0; overflow: hidden; width: 100%; }
+.strip-wrapper { display: flex; align-items: center; }
+.strip-badge { background-color: #ef4444; color: var(--white); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3px; margin-right: 1.5rem; flex-shrink: 0; }
+.strip-ticker { overflow: hidden; width: 100%; }
+.strip-ticker p { display: inline-block; white-space: nowrap; animation: run-ticker-line 30s linear infinite; font-weight: 700; color: var(--sapphire-blue); font-size: 0.9rem; }
+@keyframes run-ticker-line { 0% { transform: translate3d(100%,0,0); } 100% { transform: translate3d(-100%,0,0); } }
+
+
+/* ==========================================================
+   3. INTERNAL INTERACTIVE BANNER MECHANICS 
+   ========================================================== */
+.page-banner {
+  background: linear-gradient(rgba(2, 43, 58, 0.92), rgba(2, 43, 58, 0.82)), 
+              url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80') center center/cover;
+  padding: 5.5rem 0;
+  color: var(--white);
+  text-align: center;
+  border-bottom: 4px solid var(--teal-green);
+  width: 100%;
+}
+.page-banner h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+.page-banner p { font-size: 1.15rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+/* Home page hero layout configuration */
+.hero-slider {
+  background: linear-gradient(rgba(2, 43, 58, 0.92), rgba(2, 43, 58, 0.8)), 
+              url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80') center center/cover;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  width: 100%;
+}
+.hero-content { max-width: 800px; width: 100%; }
+.hero-content h1 { font-size: 3.4rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.25rem; }
+.hero-content p { font-size: 1.25rem; margin-bottom: 2.25rem; opacity: 0.9; }
+.animated-tag { display: inline-flex; align-items: center; gap: 0.5rem; background-color: var(--teal-green); padding: 0.35rem 1rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem; }
+
+/* Buttons framework */
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; font-weight: 700; border-radius: 4px; text-decoration: none; transition: all 0.2s; }
+.btn-primary { background-color: var(--teal-green); color: var(--white); }
+.btn-primary:hover { background-color: var(--teal-hover); }
+.btn-outline { border: 2px solid var(--white); color: var(--white); margin-left: 1rem; }
+.btn-outline:hover { background-color: var(--white); color: var(--sapphire-blue); }
+
+/* ==========================================================
+   5. GALLERY MATRIX & INFRASTRUCTURE ECOSYSTEM
+   ========================================================== */
+
+/* Ensures the grid centers perfectly within the container space */
+.gallery-matrix {
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+/* Individual Card Item Wrapper */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  height: 380px; /* Forces uniform heights across all cards */
+  background-color: var(--sapphire-blue);
+}
+
+/* Fixes the image overflow causing the layout alignment break */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops image neatly inside the card without distortion */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Beautiful modern overlay box alignment */
+.gallery-overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(2, 43, 58, 0.95)); /* Fades using your Sapphire Blue */
+  color: var(--white);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.gallery-overlay-text h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--gold-premium); /* Premium color highlight for contrast */
+}
+
+.gallery-overlay-text p {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Subtle Interactive Effects on Hover */
+.gallery-item:hover img {
+  transform: scale(1.05); /* Soft premium zoom effect */
+}
+
+/* ==========================================================
+   6. SITE FOOTER INTEGRATION
+   ========================================================== */
+.site-footer {
+  background-color: var(--canvas-light, #f8fafc);
+  padding: 4rem 0 0 0; /* Keeps space at top, removes it from bottom for copyright */
+  border-top: 1px solid var(--border-tint, #e2e8f0);
+  width: 100%;
+}
+
+/* Forces the 4 columns to stay uniform and break into 1 column on mobile */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sapphire-blue, #022B3A);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: var(--slate-muted, #475569);
+  line-height: 1.6;
+}
+
+/* Cleans up list elements by removing standard default bullets */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--teal-green, #1F7A8C);
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--teal-hover, #155764);
+  text-decoration: underline;
+}
+
+/* Gives the copyright strip clean breathing room */
+.footer-bottom {
+  margin-top: 3.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-tint, #e2e8f0);
+  background-color: var(--white, #ffffff);
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--slate-muted, #64748b);
+  margin: 0;
+}
+/* ==========================================================
+   4. RESPONSIVE MEDIA BREAKPOINTS
+   ========================================================== */
+@media (max-width: 1024px) {
+  .nav-right-group { gap: 1rem; }
+  .header-search-box { display: none; } /* Drop search tool to preserve header structure on small laptop screens */
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .nav-links { display: none; } /* Ready mobile drop-down toggle state wrapper */
+  
+  .top-bar-content { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .top-utilities { display: none; }
+  
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .section-title { font-size: 2rem; }
+  
+  .hero-content h1 { font-size: 2.2rem; }
+  .page-banner h1 { font-size: 2rem; }
+}

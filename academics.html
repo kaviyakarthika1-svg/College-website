@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Disciplines | Codax University</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><i class="fas fa-shield-halved"></i> CODAX <span>UNIVERSITY</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html" class="active">Academics Matrix</a>
+        <a href="placements.html">Placements</a>
+        <a href="infrastructure.html">Infrastructure</a>
+        <a href="fees.html">Fees & Structures</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>The Academic Matrix & Dynamic Core Syllabus</h1>
+      <p>Explore our 11 industry-mapped degree tracks. Click any course to check details instantly.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      
+      <div class="filter-row text-center" style="margin-bottom: 3.5rem;">
+        <button class="btn-filter active" data-filter="all">All Degrees (11)</button>
+        <button class="btn-filter" data-filter="computing">Computing & AI</button>
+        <button class="btn-filter" data-filter="core-eng">Next-Gen Core Engg</button>
+        <button class="btn-filter" data-filter="postgrad">Postgraduate Executive</button>
+      </div>
+
+      <div class="grid grid-3 academic-catalog">
+        
+        <div class="course-box filter-item computing" data-course="ai-ds">
+          <span class="course-tag">Faculties of AI</span>
+          <h3>B.Tech Artificial Intelligence & Data Science</h3>
+          <p>Deep neural models, NLP workflows, analytics architectures, and computer vision algorithms.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item computing" data-course="cyber">
+          <span class="course-tag">Cyber Protection</span>
+          <h3>B.Tech Cybersecurity & Penetration Testing</h3>
+          <p>Zero-trust architectures, kernel exploitation mitigation, digital forensics, and cryptographic models.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item computing" data-course="quantum">
+          <span class="course-tag">Physics & Computing</span>
+          <h3>B.Tech Quantum Computing & Systems</h3>
+          <p>Quantum error correction loops, cryogenic hardware stacks, and subatomic algorithm development.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item computing" data-course="cloud">
+          <span class="course-tag">Cloud Architecture</span>
+          <h3>B.Tech Cloud Computing & DevOps Infra</h3>
+          <p>Kubernetes container patterns, auto-scaling grids, site reliability tasks, and microservice arrays.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item core-eng" data-course="aero">
+          <span class="course-tag">Aviation Wing</span>
+          <h3>B.E. Aerospace & Autonomous Drones</h3>
+          <p>Supersonic propulsion systems, CFD modeling, flight path tracking logic, and autonomous flight controls.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item core-eng" data-course="biomed">
+          <span class="course-tag">Healthcare Tech</span>
+          <h3>B.E. Biomedical Robotics & Cybernetics</h3>
+          <p>Neural prosthetic interfaces, automated surgical instruments, and biological sensory models.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item core-eng" data-course="mechatronics">
+          <span class="course-tag">Automation Systems</span>
+          <h3>B.E. Mechatronics & Industry 4.0 Grids</h3>
+          <p>Programmable logic controllers, industrial IoT pipelines, and automated sorting matrix structures.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item core-eng" data-course="ev-tech">
+          <span class="course-tag">Automotive Tech</span>
+          <h3>B.E. Electric Vehicle Architecture</h3>
+          <p>Lithium-ion thermal control arrays, regenerative breaking circuits, and hybrid motor controllers.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item postgrad" data-course="mba-prod">
+          <span class="course-tag">Business School</span>
+          <h3>MBA Digital Product Operations</h3>
+          <p>Agile product metrics, consumer behavior analytics, venture frameworks, and global scaling tactics.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item postgrad" data-course="mba-fin">
+          <span class="course-tag">Business School</span>
+          <h3>MBA FinTech & Blockchain Strategy</h3>
+          <p>Decentralized finance loops, algorithmic asset trading, smart contracts, and risk management.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+        <div class="course-box filter-item postgrad" data-course="mtech-ds">
+          <span class="course-tag">Advanced Research</span>
+          <h3>M.Tech Data Science & Neural Systems</h3>
+          <p>Advanced deep learning topologies, transformer design optimization, and commercial analytics loops.</p>
+          <div class="interactive-click-hint"><i class="fas fa-circle-info"></i> Click to preview syllabus</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="syllabus-drawer" id="syllabusDrawer">
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer-content-box">
+      <button class="close-drawer-btn" id="closeDrawerBtn"><i class="fas fa-circle-xmark"></i> Close</button>
+      <div id="drawerDynamicBody">
+        </div>
+    </div>
+  </div>
+
+  <section class="section bg-light">
+    <div class="container grid grid-2 align-items-center">
+      <div>
+        <h2 class="section-title">Continuous Skill Mapping Analytics</h2>
+        <p>Codax University monitors progress using live engineering metrics. We prioritize structural design labs over paper testing to keep students aligned with modern technology requirements.</p>
+        <div class="metric-progress-wrapper" style="margin-top:2rem;">
+          <div class="metric-label"><span>Experiential Full-Stack Labs Training</span> <span>96%</span></div>
+          <div class="bar-outer"><div class="bar-inner" style="width: 96%;"></div></div>
+        </div>
+        <div class="metric-progress-wrapper">
+          <div class="metric-label"><span>Corporate Readiness Index</span> <span>93%</span></div>
+          <div class="bar-outer"><div class="bar-inner" style="width: 93%;"></div></div>
+        </div>
+        <div class="metric-progress-wrapper">
+          <div class="metric-label"><span>Global Research Publications Ratio</span> <span>89%</span></div>
+          <div class="bar-outer"><div class="bar-inner" style="width: 89%;"></div></div>
+        </div>
+      </div>
+      <div class="img-frame">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Students evaluating academic curves">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:none; padding:0; text-align:center;">
+      <p>© 2026 Codax University. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

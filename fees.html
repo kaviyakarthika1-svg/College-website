@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fees & Tuition Framework | Codax University</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><i class="fas fa-shield-halved"></i> CODAX <span>UNIVERSITY</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics Matrix</a>
+        <a href="placements.html">Placements</a>
+        <a href="infrastructure.html">Infrastructure</a>
+        <a href="fees.html" class="active">Fees & Structures</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Transparent Tuition Fees & Cost Estimators</h1>
+      <p>Clear pricing models paired with exceptional merit-based financial aid opportunities.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title text-center">Annual Fee Matrix Outline</h2>
+      <div class="table-container-wrapper" style="margin-top:2.5rem;">
+        <table class="premium-table">
+          <thead>
+            <tr>
+              <th>Degree Classification</th>
+              <th>Tuition Fee (Per Annum)</th>
+              <th>Advanced R&D Laboratory Fee</th>
+              <th>Examination Matrix Levy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>B.Tech Computing Tracks (AI, Cyber, Quantum, Cloud)</strong></td>
+              <td>₹ 1,95,000</td>
+              <td>₹ 25,000</td>
+              <td>₹ 10,000</td>
+            </tr>
+            <tr>
+              <td><strong>B.E. Engineering Specialties (Aerospace, Biomedical, EV, Mechatronics)</strong></td>
+              <td>₹ 1,75,000</td>
+              <td>₹ 30,000</td>
+              <td>₹ 10,000</td>
+            </tr>
+            <tr>
+              <td><strong>Postgraduate Executive Specializations (MBA, M.Tech)</strong></td>
+              <td>₹ 1,50,000</td>
+              <td>₹ 15,000</td>
+              <td>₹ 12,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light" id="calculator">
+    <div class="container container-narrow">
+      <div class="calculator-card-wrapper">
+        <h3><i class="fas fa-calculator"></i> Smart Tuition & Scholarship Waiver Estimator</h3>
+        <p class="text-muted" style="margin-bottom: 2rem;">Adjust options below to instantly calculate your annual tuition fees and check available merit-based scholarship discounts.</p>
+        
+        <div class="form-field">
+          <label for="calcStream">Target Academic Degree Field</label>
+          <select id="calcStream">
+            <option value="230000">B.Tech Computing Disciplines (Base: ₹ 2,30,000 combined)</option>
+            <option value="215000">B.E. Advanced Core Engineering (Base: ₹ 2,15,000 combined)</option>
+            <option value="177000">MBA / M.Tech Postgraduate Field (Base: ₹ 1,77,000 combined)</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="calcMerit">Prior Academic Performance Score (Class 12th / UG Aggregate %)</label>
+          <select id="calcMerit">
+            <option value="0.35">Equal or Higher than 95% Marks (35% Merit Aid Discount)</option>
+            <option value="0.15">Between 85% to 94% Marks (15% Merit Aid Discount)</option>
+            <option value="0.00">Below 85% Marks (Standard Base Fees Apply)</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="checkbox-container">
+            <input type="checkbox" id="calcHostel" value="95000"> Include Premium Residential Student Hostels & Dining (Add ₹ 95,000/yr)
+          </label>
+        </div>
+
+        <button id="btnCalculate" class="btn btn-primary btn-full" style="border:none; margin-top:1rem; cursor:pointer;">Calculate Estimated Annual Fee</button>
+
+        <div id="calculatorResult" class="calc-output-block" style="display:none;">
+          <h4>Net Payable Fee Estimate: <span id="finalFeeDisplay">₹ 0</span> / Annum</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.75rem;">* Displayed values serve as official cost projections. Final figures are finalized during verified registration stages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:none; padding:0; text-align:center;">
+      <p>© 2026 Codax University. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
